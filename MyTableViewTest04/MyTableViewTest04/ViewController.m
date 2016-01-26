@@ -32,6 +32,7 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cid];
     }
     cell.textLabel.text = [_dataSource objectAtIndex:indexPath.row];
+    cell.detailTextLabel.text =[_dataSource objectAtIndex:indexPath.row];
     cell.textLabel.font = [UIFont boldSystemFontOfSize:30];
     
     if (indexPath.row % 2 == 0) {
@@ -39,7 +40,20 @@
     }else{
         cell.contentView.backgroundColor = [UIColor greenColor];
     }
+    cell.accessoryType = UITableViewCellAccessoryDetailButton;
     return  cell;
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
+    
+    NSString * strtip = [_dataSource objectAtIndex:indexPath.row];
+    NSString * strMsg = [NSString stringWithFormat:@"You selected %@",strtip];
+    UIAlertController * controller = [UIAlertController alertControllerWithTitle:@"详细信息" message:strMsg preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"yes,i do." style:UIAlertActionStyleDefault handler:nil];
+    [controller addAction:cancelAction];
+    [self presentViewController:controller animated:YES completion:nil];
+    
+    [_tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)addRecord{
@@ -48,13 +62,8 @@
 }
 
 - (void)delRecord{
-    
-    if (self.tableView.editing) {
-        self.tableView.editing = NO;
-    }
-    else{
-        self.tableView.editing = YES;
-    }
+
+    [_tableView setEditing:!_tableView.editing animated:YES];
 }
 
 //删除某行的时候的代理相应
