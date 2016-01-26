@@ -82,7 +82,13 @@
     return indexPath;
     
 }
-
+- (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView{
+    NSMutableArray * mutableIndexArray = [NSMutableArray arrayWithCapacity:10];
+    for (NSString * str in _dataSource) {
+        [mutableIndexArray addObject:str];
+    }
+    return mutableIndexArray;
+}
 //选定后弹出消息内容提示
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
