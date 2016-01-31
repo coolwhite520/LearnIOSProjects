@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="a5V-Kt-YcT">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="171" id="fLW-jM-R2i"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="fLW-jM-R2i"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="fLW-jM-R2i"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="B5m-4c-KPJ">
+                                <rect key="frame" x="-19" y="-18" width="39" height="37"/>
+                                <animations/>
+                                <color key="pageIndicatorTintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wdw-fE-Pk7">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="可以拖动、长按"/>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="B5m-4c-KPJ" firstAttribute="top" secondItem="a5V-Kt-YcT" secondAttribute="bottom" constant="54" id="Czy-8c-jiA"/>
+                            <constraint firstItem="a5V-Kt-YcT" firstAttribute="leading" secondItem="B5m-4c-KPJ" secondAttribute="leading" id="UxQ-bv-ShX"/>
+                            <constraint firstItem="a5V-Kt-YcT" firstAttribute="trailing" secondItem="B5m-4c-KPJ" secondAttribute="trailing" id="XMq-0b-s5r"/>
+                            <constraint firstItem="Wdw-fE-Pk7" firstAttribute="top" secondItem="B5m-4c-KPJ" secondAttribute="bottom" constant="71" id="boe-eD-rob"/>
+                            <constraint firstItem="Wdw-fE-Pk7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="121" id="cA5-kf-KOE"/>
+                            <constraint firstItem="a5V-Kt-YcT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="36" id="ihk-bZ-fOD">
+                                <variation key="widthClass=compact" constant="60"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wdw-fE-Pk7" secondAttribute="trailing" constant="120" id="n5W-PL-REi"/>
+                            <constraint firstItem="a5V-Kt-YcT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="60" id="obJ-bN-Mqh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="a5V-Kt-YcT" secondAttribute="trailing" constant="60" id="pPu-t3-ELB"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="a5V-Kt-YcT"/>
+                                <exclude reference="B5m-4c-KPJ"/>
+                                <exclude reference="Wdw-fE-Pk7"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="UxQ-bv-ShX"/>
+                                <exclude reference="XMq-0b-s5r"/>
+                                <exclude reference="ihk-bZ-fOD"/>
+                                <exclude reference="obJ-bN-Mqh"/>
+                                <exclude reference="pPu-t3-ELB"/>
+                                <exclude reference="Czy-8c-jiA"/>
+                                <exclude reference="boe-eD-rob"/>
+                                <exclude reference="cA5-kf-KOE"/>
+                                <exclude reference="n5W-PL-REi"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="a5V-Kt-YcT"/>
+                                <include reference="B5m-4c-KPJ"/>
+                                <include reference="Wdw-fE-Pk7"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="UxQ-bv-ShX"/>
+                                <include reference="XMq-0b-s5r"/>
+                                <include reference="ihk-bZ-fOD"/>
+                                <include reference="obJ-bN-Mqh"/>
+                                <include reference="pPu-t3-ELB"/>
+                                <include reference="Czy-8c-jiA"/>
+                                <include reference="boe-eD-rob"/>
+                                <include reference="cA5-kf-KOE"/>
+                                <include reference="n5W-PL-REi"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="myBtn" destination="Wdw-fE-Pk7" id="eHr-pw-w7t"/>
+                        <outlet property="myImgView" destination="a5V-Kt-YcT" id="UZ7-kF-eO5"/>
+                        <outlet property="myPageView" destination="B5m-4c-KPJ" id="47N-SV-VKJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="415.5" y="323"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="1.jpg" width="1024" height="640"/>
+    </resources>
+</document>
