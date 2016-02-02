@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B64096611C4DCB58002BB75D"
-               BuildableName = "ViewControllerSendValue1.app"
-               BlueprintName = "ViewControllerSendValue1"
-               ReferencedContainer = "container:ViewControllerSendValue1.xcodeproj">
+               BlueprintIdentifier = "B620ED6A1C60BA5300C543D7"
+               BuildableName = "MyJsonTest.app"
+               BlueprintName = "MyJsonTest"
+               ReferencedContainer = "container:MyJsonTest.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B64096611C4DCB58002BB75D"
-            BuildableName = "ViewControllerSendValue1.app"
-            BlueprintName = "ViewControllerSendValue1"
-            ReferencedContainer = "container:ViewControllerSendValue1.xcodeproj">
+            BlueprintIdentifier = "B620ED6A1C60BA5300C543D7"
+            BuildableName = "MyJsonTest.app"
+            BlueprintName = "MyJsonTest"
+            ReferencedContainer = "container:MyJsonTest.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B64096611C4DCB58002BB75D"
-            BuildableName = "ViewControllerSendValue1.app"
-            BlueprintName = "ViewControllerSendValue1"
-            ReferencedContainer = "container:ViewControllerSendValue1.xcodeproj">
+            BlueprintIdentifier = "B620ED6A1C60BA5300C543D7"
+            BuildableName = "MyJsonTest.app"
+            BlueprintName = "MyJsonTest"
+            ReferencedContainer = "container:MyJsonTest.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B64096611C4DCB58002BB75D"
-            BuildableName = "ViewControllerSendValue1.app"
-            BlueprintName = "ViewControllerSendValue1"
-            ReferencedContainer = "container:ViewControllerSendValue1.xcodeproj">
+            BlueprintIdentifier = "B620ED6A1C60BA5300C543D7"
+            BuildableName = "MyJsonTest.app"
+            BlueprintName = "MyJsonTest"
+            ReferencedContainer = "container:MyJsonTest.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -1,0 +1,23 @@
+{
+    "customers": [
+                  {
+                  "name":"xixiha",
+                  "id":"1",
+                  "phone":"182****0123"
+                  },
+                  
+                  {
+                  "name":"xiaoxiong",
+                  "id":"2",
+                  "phone":"182****0124"
+                  },
+                  
+                  
+                  {
+                  "name":"xiaogou",
+                  "id":"3",
+                  "phone":"182****0125"
+                  }
+                  
+                  ]
+}
