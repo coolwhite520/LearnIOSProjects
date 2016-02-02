@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customers>
+    <customer>
+        <name>baiyang</name>
+        <id>1</id>
+        <phone>182****2123</phone>
+    </customer>
+    
+    <customer>
+        <name>xiaohua</name>
+        <id>2</id>
+        <phone>182****2025</phone>
+    </customer>
+    
+    <customer>
+        <name>fanbingbing</name>
+        <id>3</id>
+        <phone>182****1234</phone>
+    </customer>
+</customers>
