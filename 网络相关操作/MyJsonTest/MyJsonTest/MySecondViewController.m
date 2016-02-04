@@ -12,12 +12,12 @@
 @interface MySecondViewController ()
 
 @property(nonatomic,strong) UITableView * table;
-@property(nonatomic,strong) NSArray * datasource;
+@property(nonatomic,strong) NSMutableArray * datasource;
 @end
 
 @implementation MySecondViewController
 
--(void)setDataSource:(NSArray*)data{
+-(void)setDataSource:(NSMutableArray*)data{
     _datasource = data;
 }
 
@@ -50,6 +50,12 @@
     MyThirdViewController * thirdController = [self.storyboard instantiateViewControllerWithIdentifier:@"third_sid"];
     thirdController.dic = dic;
     [self.navigationController pushViewController:thirdController animated:YES];
+    [thirdController setBlock:^(NSDictionary *d) {
+        NSInteger index = indexPath.row;
+        _datasource[index] = d;
+        [_table reloadData];
+        //[_datasource replaceObjectAtIndex:index withObject:d];
+    }];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

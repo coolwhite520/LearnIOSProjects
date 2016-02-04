@@ -21,7 +21,7 @@
     NSData * data = [[NSData alloc]initWithContentsOfFile:filePath];
     NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
     NSLog(@"%@",dic);
-    NSArray * customers = [dic objectForKey:@"customers"];
+    NSMutableArray * customers = [NSMutableArray arrayWithArray:[dic objectForKey:@"customers"]];
     for (NSDictionary * d in customers) {
         NSLog(@"%@",d);
     }

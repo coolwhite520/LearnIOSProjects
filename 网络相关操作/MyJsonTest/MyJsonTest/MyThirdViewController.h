@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "MySecondViewController.h"
 
+typedef void (^Thirdblock) (NSDictionary * d);
+
 @interface MyThirdViewController : UIViewController
+
 @property(nonatomic,strong) NSDictionary * dic;
+@property(nonatomic,copy)Thirdblock block;
+- (void)setBlock:(Thirdblock)block;
 @end

@@ -10,24 +10,41 @@
 
 @interface MyThirdViewController ()
 
-@property(nonatomic,strong) IBOutletCollection(UILabel) NSArray * array;
+@property(nonatomic,strong) IBOutletCollection(UITextField) NSArray * array;
 @end
 
 @implementation MyThirdViewController
+
+- (IBAction)saveInfo:(UIButton *)sender {
+    
+    NSMutableDictionary * dic = [NSMutableDictionary dictionaryWithCapacity:3];
+    
+    [dic setObject:((UITextField*)_array[0]).text forKey:@"name"];
+    [dic setObject:((UITextField*)_array[1]).text forKey:@"id"];
+    [dic setObject:((UITextField*)_array[2]).text forKey:@"phone"];
+    self.block(dic);
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+- (void)setBlock:(Thirdblock)block{
+    
+    _block = block;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.title = @"详细信息";
-//    self.navigationItem.title = @"";
+    //    self.navigationItem.title = @"";
     
     NSString * name = [_dic objectForKey:@"name"];
     NSString * pid = [_dic objectForKey:@"id"];
     NSString * phone = [_dic objectForKey:@"phone"];
     
-    UILabel * nameLable = _array[0];
-    UILabel * idLabel = _array[1];
-    UILabel * phoneLable = _array[2];
+    UITextField * nameLable = _array[0];
+    UITextField * idLabel = _array[1];
+    UITextField * phoneLable = _array[2];
     
     nameLable.text = name;
     idLabel.text = pid;
@@ -43,13 +60,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
