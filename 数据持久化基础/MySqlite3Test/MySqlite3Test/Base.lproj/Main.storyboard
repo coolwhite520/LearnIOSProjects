@@ -13,19 +13,10 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rji-jB-Rcj">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="101" y="70" width="199" height="30"/>
-                                </variation>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WMh-8h-i7r">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <animations/>
@@ -64,29 +55,42 @@
                                     <action selector="getInfo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zas-D8-RWZ"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rji-jB-Rcj">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="101" y="70" width="199" height="30"/>
+                                </variation>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="Rji-jB-Rcj"/>
                                 <exclude reference="WMh-8h-i7r"/>
                                 <exclude reference="nlL-6g-Aqn"/>
                                 <exclude reference="mnC-j4-G3v"/>
                                 <exclude reference="LL5-jp-qNI"/>
+                                <exclude reference="Rji-jB-Rcj"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="Rji-jB-Rcj"/>
                                 <include reference="WMh-8h-i7r"/>
                                 <include reference="nlL-6g-Aqn"/>
                                 <include reference="mnC-j4-G3v"/>
                                 <include reference="LL5-jp-qNI"/>
+                                <include reference="Rji-jB-Rcj"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <action selector="clickDown:" destination="BYZ-38-t0r" eventType="touchDown" id="IJ7-IS-e9w"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="btnGetInfo" destination="LL5-jp-qNI" id="Sl3-rd-C9L"/>
                         <outletCollection property="fields" destination="Rji-jB-Rcj" id="Rgc-wZ-pwu"/>
                         <outletCollection property="fields" destination="WMh-8h-i7r" id="qnB-L8-kam"/>
                         <outletCollection property="fields" destination="nlL-6g-Aqn" id="0Vk-JI-PbT"/>

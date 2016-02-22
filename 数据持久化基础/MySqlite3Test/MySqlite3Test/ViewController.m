@@ -11,6 +11,7 @@
 @interface ViewController ()
 
 @property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *fields;
+@property (weak, nonatomic) IBOutlet UIButton *btnGetInfo;
 
 @end
 
@@ -22,6 +23,7 @@
     NSArray * paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString * docPath = [paths objectAtIndex:0];
     return [docPath stringByAppendingPathComponent:@"userinfo.sqlite"];
+    
 }
 
 - (void)showUserInfo{
@@ -34,7 +36,7 @@
         NSAssert(0, @"Failed to open database....");
     }
     NSString * createSQL = @"CREATE TABLE IF NOT EXISTS FIELDS"
-                            "(ROW INTEGER PRIMARY KEY, FIELD_DATA TEXT);";
+    "(ROW INTEGER PRIMARY KEY, FIELD_DATA TEXT);";
     char * errmsg = NULL;
     if(sqlite3_exec(database, [createSQL UTF8String], NULL, NULL, &errmsg) != SQLITE_OK){
         sqlite3_close(database);
@@ -59,16 +61,52 @@
 - (IBAction)getInfo:(UIButton *)sender {
     
     
-   }
+}
 
+- (IBAction)clickDown:(id)sender{
+    
+    for (UITextField * t in _fields) {
+        [t resignFirstResponder];
+    }
+}
 
+- (void)resignResponse : (id)sender{
+    
+    [sender resignFirstResponder];
+}
+
+- (void) keyboardShow:(NSNotification*)notification{
+    
+    NSDictionary * dicInfo = [notification userInfo];
+    NSValue * value = [dicInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+    
+    CGSize size = [value CGRectValue].size;
+    
+    CGAffineTransform transform = CGAffineTransformMakeTranslation(0, -size.height);
+    self.view.transform = transform;
+    NSLog(@"keyboard....show height = %f",size.height);
+}
+
+- (void) keyboardHide:(NSNotification*)notification{
+    
+    CGAffineTransform transform = CGAffineTransformMakeTranslation(0, 0);
+    self.view.transform = transform;
+    NSLog(@"keyboard....hide");
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    
     [self showUserInfo];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:) name:UIApplicationWillResignActiveNotification object:[UIApplication sharedApplication]];
-
+    
+    for (UITextField * t in _fields) {
+        [t addTarget:self action:@selector(resignResponse:) forControlEvents:UIControlEventEditingDidEndOnExit];
+    }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShow:) name:UIKeyboardDidShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHide:) name:UIKeyboardDidHideNotification object:nil];
 }
 
 - (void)applicationWillResignActive:(NSNotification *) notification{
@@ -82,7 +120,7 @@
     for (int i=0; i<4; i++) {
         UITextField * textField = _fields[i];
         char * insert = "insert or replace into fields (row,field_data)"
-                        "values(?,?);";
+        "values(?,?);";
         char * erroMsg = NULL;
         sqlite3_stmt * stmt;
         if (sqlite3_prepare_v2(database, insert, -1, &stmt, NULL) == SQLITE_OK) {
