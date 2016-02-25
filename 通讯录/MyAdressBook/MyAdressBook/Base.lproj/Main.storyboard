@@ -20,9 +20,22 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbY-CO-dVL">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="112" id="Mpw-lJ-MF8"/>
+                                    <constraint firstAttribute="height" constant="30" id="SFc-Ih-ZDg"/>
+                                </constraints>
                                 <state key="normal" title="ask adress book"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="144" y="245" width="112" height="30"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Mpw-lJ-MF8"/>
+                                        <exclude reference="SFc-Ih-ZDg"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Mpw-lJ-MF8"/>
+                                        <include reference="SFc-Ih-ZDg"/>
+                                    </mask>
                                 </variation>
                                 <connections>
                                     <action selector="accessAdressBook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xwq-ke-dwi"/>
@@ -31,20 +44,40 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wbY-CO-dVL" secondAttribute="bottom" constant="305" id="3JL-L3-DOg"/>
+                            <constraint firstItem="wbY-CO-dVL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="104" id="4i3-wj-mJc"/>
+                            <constraint firstItem="wbY-CO-dVL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="213" id="gYw-HS-0YC"/>
+                            <constraint firstAttribute="trailing" secondItem="wbY-CO-dVL" secondAttribute="trailing" constant="104" id="gv5-fk-sG2"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="wbY-CO-dVL"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="4i3-wj-mJc"/>
+                                <exclude reference="gYw-HS-0YC"/>
+                                <exclude reference="gv5-fk-sG2"/>
+                                <exclude reference="3JL-L3-DOg"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="wbY-CO-dVL"/>
                             </mask>
+                            <mask key="constraints">
+                                <include reference="4i3-wj-mJc"/>
+                                <include reference="gYw-HS-0YC"/>
+                                <include reference="gv5-fk-sG2"/>
+                                <include reference="3JL-L3-DOg"/>
+                            </mask>
                         </variation>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="208.5" y="216.75"/>
         </scene>
     </scenes>
 </document>
